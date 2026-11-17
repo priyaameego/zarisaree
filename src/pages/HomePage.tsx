@@ -854,32 +854,52 @@ export function HomePage() {
       </section>
 
       {/* 9. Crimson Silk Finale & Newsletter */}
-      <section className="relative bg-[#4A0E16] text-white overflow-hidden">
-        <div className="absolute inset-0 overflow-hidden opacity-35">
-          <SafeImage
-            src="/src/assets/images/saree_banarasi_crimson_1794850466729.jpg"
-            alt="Royal crimson Banarasi silk texture"
-            className="w-full h-full object-cover object-top animate-ken-burns"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#32080E] via-[#4A0E16]/75 to-[#32080E]/90" />
+      <section className="relative bg-[#2D060B] text-white overflow-hidden py-24 lg:py-36 min-h-[500px] flex items-center justify-center">
+        {/* Full Bride Editorial Video-like Animation Layer */}
+        <div className="absolute inset-0 overflow-hidden">
+          <motion.div
+            animate={{
+              scale: [1.02, 1.14, 1.02],
+              y: [0, -16, 0],
+            }}
+            transition={{
+              duration: 18,
+              repeat: Infinity,
+              ease: 'easeInOut',
+            }}
+            className="w-full h-full"
+          >
+            <SafeImage
+              src="/src/assets/images/cat_bridal_lehenga_1794850471326.jpg"
+              alt="Royal Indian Bride in Handcrafted Heritage Zardozi Lehenga"
+              className="w-full h-full object-cover object-[center_32%]"
+            />
+          </motion.div>
+          {/* Cinematic video overlay vignette */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#1C0306]/95 via-[#3B070E]/60 to-[#1C0306]/80" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_20%,rgba(20,2,4,0.75)_80%)]" />
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.25 }}
-          transition={{ duration: 0.65 }}
-          className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center"
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
         >
-          <p className="text-xs font-medium uppercase tracking-[0.25em] text-[#E6D3A8]">
-            Zari &amp; Loom Atelier
-          </p>
-          <h2 className="font-display text-4xl sm:text-5xl font-medium mt-3 [text-wrap:balance]">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-[#D4B87A]/30 mb-4">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#D4B87A] animate-pulse" />
+            <p className="text-[11px] font-medium uppercase tracking-[0.25em] text-[#E6D3A8]">
+              Zari &amp; Loom Bridal Atelier
+            </p>
+          </div>
+
+          <h2 className="font-display text-4xl sm:text-6xl font-medium tracking-tight text-white drop-shadow-md [text-wrap:balance]">
             Receive New Loom Editions First
           </h2>
-          <p className="mt-3 text-sm text-white/80 max-w-lg mx-auto">
+          <p className="mt-3 text-sm sm:text-base text-white/90 max-w-lg mx-auto font-light leading-relaxed drop-shadow-sm">
             Join our private dispatch for seasonal bridal previews, hand-painted organza drops,
-            and weaver stories.
+            and master weaver stories.
           </p>
 
           <form
@@ -893,12 +913,12 @@ export function HomePage() {
               onChange={(e) => setNewsletterEmail(e.target.value)}
               placeholder="Enter your email address"
               aria-label="Email address for newsletter"
-              className="flex-1 bg-white/10 backdrop-blur-sm border border-white/30 px-4 py-3 text-sm text-white placeholder:text-white/60 focus:outline-none focus:border-white"
+              className="flex-1 bg-black/40 backdrop-blur-md border border-white/30 px-5 py-3.5 text-sm text-white placeholder:text-white/60 focus:outline-none focus:border-[#D4B87A] transition-colors rounded-none"
             />
             <button
               type="submit"
               disabled={submittingNewsletter}
-              className="px-6 py-3 bg-white text-[#1C1917] text-sm font-medium hover:bg-[#FAF8F5] transition-colors whitespace-nowrap disabled:opacity-60"
+              className="px-8 py-3.5 bg-[#D4B87A] text-[#1C1917] text-sm font-semibold uppercase tracking-wider hover:bg-white hover:text-black transition-all duration-200 whitespace-nowrap disabled:opacity-60 shadow-lg"
             >
               {submittingNewsletter ? 'Joining...' : 'Subscribe'}
             </button>
