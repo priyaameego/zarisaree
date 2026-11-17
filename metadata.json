@@ -1,0 +1,6 @@
+{
+  "name": "Zari & Loom — Luxury Indian Sarees & Heritage Handloom",
+  "description": "Curated Banarasi, Kanjivaram, Chanderi, and Organza sarees, bridal lehengas, and bespoke Indian ethnic wear crafted by master artisans.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
