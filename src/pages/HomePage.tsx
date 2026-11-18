@@ -508,7 +508,7 @@ export function HomePage() {
       <SculptedArchiveSection />
 
       {/* 5. Signature Loom Editions (Interactive Catalog with 3D Scroll Morph Animation) */}
-      <section className="bg-white border-b border-[#EAE4DC] overflow-hidden">
+      <section className="bg-[#FAF6F0] border-b border-[#DDD3C4] overflow-hidden">
         {/* Scroll-Morph 3D Morphing Stage (Scatter -> Circle -> Rainbow Arc -> Shuffle) */}
         <ScrollMorphHero
           badgeText="Interactive Catalog"
@@ -516,7 +516,7 @@ export function HomePage() {
           subheadingText="Scroll down to morph our 20-piece curated heritage archive into an interactive 3D arc. Hover any edition to flip and inspect the weave."
         />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20 border-t border-[#EAE4DC]/60">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20 border-t border-[#DDD3C4]/70">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
             <div>
               <p className="text-xs font-medium uppercase tracking-[0.2em] text-[#9A7B4F]">

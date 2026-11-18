@@ -294,10 +294,10 @@ export default function ScrollMorphHero({
     return (
         <div
             ref={containerRef}
-            className="relative w-full h-[640px] sm:h-[720px] lg:h-[780px] bg-[#FAF8F5] overflow-hidden select-none border-y border-[#EAE4DC]"
+            className="relative w-full h-[640px] sm:h-[720px] lg:h-[780px] bg-[#F4EDE4] overflow-hidden select-none border-y border-[#DDD3C4]"
         >
-            {/* Subtle luxury ambient texture overlay */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,rgba(212,184,122,0.14),transparent_75%)] pointer-events-none" />
+            {/* Elegant warm champagne & subtle rose zari ambient glow */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,rgba(212,184,122,0.22),rgba(244,237,228,0.95)_75%)] pointer-events-none" />
 
             {/* Container */}
             <div className="flex h-full w-full flex-col items-center justify-center perspective-1000 relative">
