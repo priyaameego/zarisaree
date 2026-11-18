@@ -197,11 +197,22 @@ export default function ScrollMorphHero({
         if (!container) return;
 
         const handleWheel = (e: WheelEvent) => {
-            // Prevent default to prevent whole window bounce while scrolling interactive catalog
-            e.preventDefault();
-            const newScroll = Math.min(Math.max(scrollRef.current + e.deltaY, 0), MAX_SCROLL);
-            scrollRef.current = newScroll;
-            virtualScroll.set(newScroll);
+            // Check if section is visible in screen
+            const rect = container.getBoundingClientRect();
+            const inView = rect.top <= window.innerHeight * 0.75 && rect.bottom >= window.innerHeight * 0.25;
+            if (!inView) return;
+
+            // Faster & responsive scroll multiplier
+            const isScrollUpAtTop = scrollRef.current <= 0 && e.deltaY < 0;
+            const isScrollDownAtEnd = scrollRef.current >= MAX_SCROLL && e.deltaY > 0;
+
+            if (!isScrollUpAtTop && !isScrollDownAtEnd) {
+                e.preventDefault();
+                const delta = e.deltaY * 1.5;
+                const newScroll = Math.min(Math.max(scrollRef.current + delta, 0), MAX_SCROLL);
+                scrollRef.current = newScroll;
+                virtualScroll.set(newScroll);
+            }
         };
 
         let touchStartY = 0;
@@ -209,13 +220,23 @@ export default function ScrollMorphHero({
             touchStartY = e.touches[0].clientY;
         };
         const handleTouchMove = (e: TouchEvent) => {
+            const rect = container.getBoundingClientRect();
+            const inView = rect.top <= window.innerHeight * 0.75 && rect.bottom >= window.innerHeight * 0.25;
+            if (!inView) return;
+
             const touchY = e.touches[0].clientY;
-            const deltaY = touchStartY - touchY;
+            const deltaY = (touchStartY - touchY) * 2.2;
             touchStartY = touchY;
 
-            const newScroll = Math.min(Math.max(scrollRef.current + deltaY, 0), MAX_SCROLL);
-            scrollRef.current = newScroll;
-            virtualScroll.set(newScroll);
+            const isScrollUpAtTop = scrollRef.current <= 0 && deltaY < 0;
+            const isScrollDownAtEnd = scrollRef.current >= MAX_SCROLL && deltaY > 0;
+
+            if (!isScrollUpAtTop && !isScrollDownAtEnd) {
+                e.preventDefault();
+                const newScroll = Math.min(Math.max(scrollRef.current + deltaY, 0), MAX_SCROLL);
+                scrollRef.current = newScroll;
+                virtualScroll.set(newScroll);
+            }
         };
 
         container.addEventListener("wheel", handleWheel, { passive: false });
@@ -229,13 +250,13 @@ export default function ScrollMorphHero({
         };
     }, [virtualScroll]);
 
-    // 1. Morph Progress: 0 (Circle) -> 1 (Bottom Arc) between scroll 0 and 600
-    const morphProgress = useTransform(virtualScroll, [0, 600], [0, 1]);
-    const smoothMorph = useSpring(morphProgress, { stiffness: 40, damping: 20 });
+    // 1. Morph Progress: 0 (Circle) -> 1 (Bottom Arc) happens briskly between scroll 0 and 280
+    const morphProgress = useTransform(virtualScroll, [0, 280], [0, 1]);
+    const smoothMorph = useSpring(morphProgress, { stiffness: 95, damping: 22 });
 
-    // 2. Scroll Rotation (Shuffling)
-    const scrollRotate = useTransform(virtualScroll, [600, 3000], [0, 360]);
-    const smoothScrollRotate = useSpring(scrollRotate, { stiffness: 40, damping: 20 });
+    // 2. Scroll Rotation (Shuffling): Starts right after morph (> 280)
+    const scrollRotate = useTransform(virtualScroll, [280, 2000], [0, 360]);
+    const smoothScrollRotate = useSpring(scrollRotate, { stiffness: 75, damping: 22 });
 
     // --- Mouse Parallax ---
     const mouseX = useMotionValue(0);
@@ -255,10 +276,10 @@ export default function ScrollMorphHero({
         return () => container.removeEventListener("mousemove", handleMouseMove);
     }, [mouseX]);
 
-    // --- Intro Sequence ---
+    // --- Intro Sequence (Fast & Snappy: reveals circle immediately, morphs upon scroll) ---
     useEffect(() => {
-        const timer1 = setTimeout(() => setIntroPhase("line"), 500);
-        const timer2 = setTimeout(() => setIntroPhase("circle"), 2500);
+        const timer1 = setTimeout(() => setIntroPhase("line"), 150);
+        const timer2 = setTimeout(() => setIntroPhase("circle"), 600);
         return () => { clearTimeout(timer1); clearTimeout(timer2); };
     }, []);
 
