@@ -22,6 +22,7 @@ import {
   StaggerTestimonials,
   type StaggerLookbookItem,
 } from '../components/ui/stagger-testimonials';
+import ScrollMorphHero from '../components/ui/scroll-morph-hero';
 import { formatDate } from '../utils/format';
 
 const OCCASIONS = [
@@ -470,17 +471,24 @@ export function HomePage() {
       {/* 4B. Sculpted Silhouettes Gallery (Arch / Square / Petal / Circle / Oval) */}
       <SculptedArchiveSection />
 
-      {/* 5. Signature Loom Editions (Featured / New Arrivals / Best Sellers) */}
-      <section className="bg-white border-b border-[#EAE4DC]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-22">
+      {/* 5. Signature Loom Editions (Interactive Catalog with 3D Scroll Morph Animation) */}
+      <section className="bg-white border-b border-[#EAE4DC] overflow-hidden">
+        {/* Scroll-Morph 3D Morphing Stage (Scatter -> Circle -> Rainbow Arc -> Shuffle) */}
+        <ScrollMorphHero
+          badgeText="Interactive Catalog"
+          headingText="Signature Loom Editions"
+          subheadingText="Scroll down to morph our 20-piece curated heritage archive into an interactive 3D arc. Hover any edition to flip and inspect the weave."
+        />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20 border-t border-[#EAE4DC]/60">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
             <div>
-              <p className="text-xs font-medium uppercase tracking-[0.2em] text-[#B85D6E]">
-                Interactive Catalog
+              <p className="text-xs font-medium uppercase tracking-[0.2em] text-[#9A7B4F]">
+                Curated Gallery
               </p>
-              <h2 className="font-display text-3xl sm:text-4xl font-medium text-[#1C1917] mt-1.5">
-                Signature Loom Editions
-              </h2>
+              <h3 className="font-display text-2xl sm:text-3xl font-medium text-[#1C1917] mt-1">
+                Browse by Category
+              </h3>
             </div>
 
             <div className="inline-flex bg-[#FAF8F5] p-1 border border-[#E5DEC9] self-start">
