@@ -113,28 +113,28 @@ function FlipCard({
     );
 }
 
-// Default fallback images from luxury saree collection & unsplash
+// 100% Authentic Handcrafted Indian Sarees, Lehengas & Handloom Drapes (Zero generic landscape photos)
 const DEFAULT_IMAGES: MorphCardItem[] = [
-    { src: "/src/assets/images/saree_banarasi_crimson_1794850466729.jpg", title: "Crimson Banarasi", category: "Kadwa Brocade", to: "/shop?category=silk-sarees" },
-    { src: "/src/assets/images/saree_kanjivaram_gold_1794850471469.jpg", title: "Kanchipuram Gold", category: "Temple Zari", to: "/shop?category=silk-sarees" },
-    { src: "/src/assets/images/saree_organza_blush_1794850469816.jpg", title: "Blush Organza", category: "Hand-Painted", to: "/shop?category=designer-sarees" },
-    { src: "/src/assets/images/cat_bridal_lehenga_1794850471326.jpg", title: "Rosewood Zardozi", category: "Bridal Couture", to: "/shop?category=lehengas" },
-    { src: "/src/assets/images/saree_kanjivaram_emerald_1794850469871.jpg", title: "Emerald 3-Ply", category: "Pure Mulberry", to: "/shop?color=Forest%20Emerald" },
-    { src: "/src/assets/images/saree_banarasi_rose_1794850467928.jpg", title: "Rosewood Jaal", category: "Katan Silk", to: "/shop?color=Dusty%20Rose" },
-    { src: "/src/assets/images/cat_anarkali_suit_1794850472099.jpg", title: "Ivory Anarkali", category: "Raw Silk", to: "/shop?category=suits" },
-    { src: "/src/assets/images/saree_chanderi_beige_1794850470161.jpg", title: "Sand Chanderi", category: "Tissue Zari", to: "/shop?color=Warm%20Sand" },
-    { src: "/src/assets/images/saree_organza_sage_1794850470074.jpg", title: "Sage Ivory", category: "Featherlight", to: "/shop?color=Sage%20Ivory" },
-    { src: "/src/assets/images/cat_festive_kurti_1794850472253.jpg", title: "Festive Kurti", category: "Chanderi", to: "/shop" },
-    { src: "/src/assets/images/hero_kanjivaram_editorial_1794850468130.jpg", title: "Editorial Drape", category: "Heritage", to: "/shop" },
-    { src: "/src/assets/images/story_handloom_weaving_1794850472133.jpg", title: "Pit-Loom Craft", category: "Artisan Weave", to: "/shop" },
-    { src: "https://cdn.21st.dev/assets/mirror/4d/4d1bff4ea8b9f400dff7ae405f92e15bd39ec76e9285c7d96017e64ba1de3ae1.jpg", title: "Royal Trousseau", category: "Handloom", to: "/shop" },
-    { src: "https://cdn.21st.dev/assets/mirror/ee/ee36e332fe99d7611c43b90511db08a4f84e4545caa78e7b52e9ccffe273864b.jpg", title: "Opulent Tissue", category: "Zari Weave", to: "/shop" },
-    { src: "https://cdn.21st.dev/assets/mirror/dd/dddeaa4e6132c65bf7ff99d197f792a30937b5cbfe97a2b1ee54a793684df52e.jpg", title: "Varanasi Gold", category: "Kadwa Motif", to: "/shop" },
-    { src: "https://cdn.21st.dev/assets/mirror/48/487977107b5011b5e1c25289f6e4393ef555e1a92daee554788e9363b233ca14.jpg", title: "Sindoori Pattu", category: "Pure Silk", to: "/shop" },
-    { src: "https://cdn.21st.dev/assets/mirror/a1/a12509688be6c9d3b2cb26d2ea1cfce48b8a8dbf2653e17be8a3fc31bd69f162.jpg", title: "Pastel Flora", category: "Organza Silk", to: "/shop" },
-    { src: "https://cdn.21st.dev/assets/mirror/05/051f9e565b5b0b221384d9c27a0760febc3fb48d190c046adfda579f3614c958.jpg", title: "Gold Jangla", category: "Banarasi", to: "/shop" },
-    { src: "https://cdn.21st.dev/assets/mirror/87/87d4f60a4465d19d14b8acefa46275df4ccd767ccea6d7f234ea5bad99cfec56.jpg", title: "Temple Border", category: "Kanchipuram", to: "/shop" },
-    { src: "https://cdn.21st.dev/assets/mirror/06/0610989e0675a12c02d35aa5464e2644bf77913214b748b73a894808d2d79877.jpg", title: "Heritage Weft", category: "Hand-Spun", to: "/shop" },
+    { src: "/src/assets/images/saree_banarasi_crimson_1794850466729.jpg", title: "Crimson Banarasi", category: "Kadwa Katan Silk", to: "/shop?category=silk-sarees" },
+    { src: "/src/assets/images/saree_kanjivaram_gold_1794850471469.jpg", title: "Kanchipuram Gold", category: "Pure Temple Zari", to: "/shop?category=silk-sarees" },
+    { src: "/src/assets/images/saree_organza_blush_1794850469816.jpg", title: "Blush Organza", category: "Hand-Painted Floral", to: "/shop?category=designer-sarees" },
+    { src: "/src/assets/images/cat_bridal_lehenga_1794850471326.jpg", title: "Rosewood Zardozi", category: "Bridal Couture Drape", to: "/shop?category=lehengas" },
+    { src: "/src/assets/images/saree_kanjivaram_emerald_1794850469871.jpg", title: "Emerald 3-Ply", category: "Vaikuntham Pattu", to: "/shop?color=Forest%20Emerald" },
+    { src: "/src/assets/images/saree_banarasi_rose_1794850467928.jpg", title: "Dusty Rose Katan", category: "Gulab Jaal Brocade", to: "/shop?color=Dusty%20Rose" },
+    { src: "/src/assets/images/cat_anarkali_suit_1794850472099.jpg", title: "Ivory Silk Anarkali", category: "Gota Patti Ensemble", to: "/shop?category=suits" },
+    { src: "/src/assets/images/saree_chanderi_beige_1794850470161.jpg", title: "Warm Sand Chanderi", category: "Copper Zari Tissue", to: "/shop?color=Warm%20Sand" },
+    { src: "/src/assets/images/saree_organza_sage_1794850470074.jpg", title: "Sage Ivory Organza", category: "Scalloped Pearl Drape", to: "/shop?color=Sage%20Ivory" },
+    { src: "/src/assets/images/cat_festive_kurti_1794850472253.jpg", title: "Festive Silk Kurti", category: "Handloom Trousseau", to: "/shop" },
+    { src: "/src/assets/images/hero_kanjivaram_editorial_1794850468130.jpg", title: "Editorial Pattu", category: "Heirloom Gold Weave", to: "/shop?category=silk-sarees" },
+    { src: "/src/assets/images/story_handloom_weaving_1794850472133.jpg", title: "Pit-Loom Zari", category: "Master Artisan Weave", to: "/shop" },
+    { src: "/src/assets/images/saree_banarasi_crimson_1794850466729.jpg", title: "Sindoori Kadwa", category: "Bridal Banarasi", to: "/shop?category=silk-sarees" },
+    { src: "/src/assets/images/saree_kanjivaram_gold_1794850471469.jpg", title: "Swarna Kanjivaram", category: "24K Dip Zari Pattu", to: "/shop?category=silk-sarees" },
+    { src: "/src/assets/images/saree_banarasi_rose_1794850467928.jpg", title: "Pastel Rose Brocade", category: "Handwoven Shikargah", to: "/shop?color=Dusty%20Rose" },
+    { src: "/src/assets/images/saree_kanjivaram_emerald_1794850469871.jpg", title: "Mayilkan Emerald", category: "Peacock Motif Saree", to: "/shop?color=Forest%20Emerald" },
+    { src: "/src/assets/images/saree_organza_blush_1794850469816.jpg", title: "Gulabi Organza", category: "Botanical Petal Drape", to: "/shop?category=designer-sarees" },
+    { src: "/src/assets/images/cat_bridal_lehenga_1794850471326.jpg", title: "Heritage Trousseau", category: "Marwar Zardozi Work", to: "/shop?category=lehengas" },
+    { src: "/src/assets/images/saree_chanderi_beige_1794850470161.jpg", title: "Beige Tissue Pattu", category: "Featherlight Chanderi", to: "/shop?color=Warm%20Sand" },
+    { src: "/src/assets/images/hero_kanjivaram_editorial_1794850468130.jpg", title: "Royal Temple Border", category: "Mukkeish Korvai Drape", to: "/shop?category=silk-sarees" },
 ];
 
 const TOTAL_IMAGES = 20;
