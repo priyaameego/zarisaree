@@ -23,6 +23,7 @@ import {
   type StaggerLookbookItem,
 } from '../components/ui/stagger-testimonials';
 import ScrollMorphHero from '../components/ui/scroll-morph-hero';
+import ScrollExpandMedia from '../components/ui/scroll-expansion-hero';
 import { formatDate } from '../utils/format';
 
 const OCCASIONS = [
@@ -309,8 +310,43 @@ export function HomePage() {
 
   return (
     <div className="overflow-x-clip">
-      {/* 1. Full-Bleed Multi-Slide Emerald & Gold Ken Burns Hero */}
-      <KenBurnsHero />
+      {/* 1. Scroll-Expansion Hero with Saree Drape Zoom & Text Blend */}
+      <ScrollExpandMedia
+        mediaType="image"
+        mediaSrc="/src/assets/images/hero_kanjivaram_editorial_1794850468130.jpg"
+        bgImageSrc="/src/assets/images/story_handloom_weaving_1794850472133.jpg"
+        title="Royal Saree Atelier"
+        date="Woven in Pure Zari"
+        scrollToExpand="Scroll to Expand Heirloom Drape"
+      >
+        <div className="max-w-4xl mx-auto text-center space-y-6">
+          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#D4B87A]">
+            The Heritage Manifesto
+          </p>
+          <h2 className="font-display text-3xl sm:text-5xl font-medium text-white [text-wrap:balance]">
+            Six Yards of Pure Grace, Handcrafted for Generations
+          </h2>
+          <p className="text-sm sm:text-base text-white/80 max-w-2xl mx-auto leading-relaxed">
+            Every Zari &amp; Loom creation is hand-spun on heritage wooden pit-looms across Varanasi and Kanchipuram, 
+            marrying centuries of weaving artistry with contemporary luxury drape styling.
+          </p>
+          <div className="pt-2 flex flex-wrap justify-center gap-4">
+            <Link
+              to="/shop?category=silk-sarees"
+              className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#D4B87A] text-[#1C1917] text-xs font-semibold uppercase tracking-wider hover:bg-white transition-colors shadow-lg"
+            >
+              <span>Explore Silk Sarees</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+            <Link
+              to="/shop?category=designer-sarees"
+              className="inline-flex items-center gap-2 px-7 py-3.5 bg-white/10 backdrop-blur-md border border-white/30 text-white text-xs font-semibold uppercase tracking-wider hover:bg-white/20 transition-colors"
+            >
+              <span>Designer Organza</span>
+            </Link>
+          </div>
+        </div>
+      </ScrollExpandMedia>
 
       {/* 2. Arched 3D Tilt Categories Showcase */}
       <section className="bg-[#FAF8F5] py-16 lg:py-24 border-b border-[#EAE4DC]">
